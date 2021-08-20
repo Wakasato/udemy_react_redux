@@ -1,6 +1,7 @@
-{
-    type: 'INCREMENT'
-}
-{
-    type: 'DECREMENT'
-}
+export const increment = () => ({
+    type: "INCREMENT"
+})
+
+export const increment = () => ({
+    type:v"DECREMENT"
+})
