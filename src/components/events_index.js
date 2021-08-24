@@ -1,25 +1,27 @@
 import React,{ Component } from "react";
 import {connect} from 'react-redux';
-import { increment, decrement} from '../actions'
+import { readEvents } from '../actions'
 
 
-class App extends Component {
-
+class EVentsIndex extends Component {
+  componentDidMount(){
+    this.props.readEvents()
+  }
   render(){
      const props = this.props
 
     return(
          <React.Fragment>
           value:{props.value}
-            <button onClick={props.increment}>+1</button>
-            <button onClick={props.decrement}>-1</button>
+            <button>+1</button>
+            <button>-1</button>
        </React.Fragment>
       )
   }
 }
 
-const mapStateToProps = state =>({value: state.count.value})
+const mapStateToProps = state =>({})
 
-const mapDispatchToProps =({increment, decrement})
+const mapDispatchToProps =({readEvents})
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(EVentsIndex)
